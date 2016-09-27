@@ -23,6 +23,7 @@ h1 {
 .mainText {
 	color: #707070;
 	background-color: #BFF5F9;
+	font-size: 16px;
 	border: solid 1px #23556B;
 	padding: 8px;
 	float: right;
@@ -34,6 +35,10 @@ h1 {
 	background-color: #BFF5F9;
 	border: solid 1px #23556B;
 	padding: 8px;
+}
+
+.padding {
+	padding-left: 20px;
 }
 
 #leftcolumn {
@@ -63,4 +68,16 @@ ul .list-group-item {
 
 .table-striped {
 	background-color: #C8c8c8;
+}
+
+.dl-horizontal dt{
+    text-align: left;
+    margin-bottom: 1em;
+    width: auto;
+    padding-right: 1em;
+}
+
+.dl-horizontal dd{
+    margin-left: 0;
+    margin-bottom: 1em;
 }
