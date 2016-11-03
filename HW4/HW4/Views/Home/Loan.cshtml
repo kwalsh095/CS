@@ -5,3 +5,28 @@
 
 <h2>@ViewBag.Title</h2>
 
+<form method="post">
+    <table>
+        <tr>
+            <td><label for="pv">Initial Value</label></td>
+            <td><input type="text" name="pv" value="1000" /></td>
+        </tr>
+        <tr>
+            <td><label for="r">Interest Rate %</label></td>
+            <td><input type="number" name="r" value="5" /></td>
+        </tr>
+        <tr>
+            <td><label for="n">Number of Years</label></td>
+            <td><input type="number" name="n" value="1" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="submit" value="Calculate" /></td>
+            <td></td>
+        </tr>
+    </table>
+</form>
+
+<br /><br />
+@ViewBag.txt1@ViewBag.result
+<br />
+@ViewBag.txt2@ViewBag.sum

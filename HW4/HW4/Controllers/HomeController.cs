@@ -43,8 +43,33 @@ namespace HW4.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Loan()
         {
+            return View();
+        }
+
+        //Do the calculations for the loan
+        [HttpPost]
+        public ActionResult Loan(double? pv, double? r, int? n)
+        {
+
+            if (pv == null || r == null || n == null || n < 1 || r < 0.01)
+            {
+                ViewBag.result = "You've typed an invalid value, please try again.";
+                return View();
+            }
+
+            r = r /100 / 12;
+            n = n * 12;
+            double? temp = (r / (Math.Pow(1 + (double)r, (int)n) - 1));
+            double? result = (r + temp) * pv;
+
+            ViewBag.result = String.Format("{0:0.00}", result);
+            ViewBag.sum = String.Format("{0:0.00}", result * n);
+
+            ViewBag.txt1 = "Monthly Payment: $";
+            ViewBag.txt2 = "Sum of payments: $";
 
             return View();
         }
