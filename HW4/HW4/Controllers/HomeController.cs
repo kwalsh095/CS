@@ -14,6 +14,7 @@ namespace HW4.Controllers
             return View();
         }
 
+        //Use a Get request in a form.
         public ActionResult Page1()
         {
             if (!String.IsNullOrEmpty(Request.QueryString["food"]))
@@ -22,6 +23,29 @@ namespace HW4.Controllers
                 ViewBag.foodData = food;
             }
                         
+            return View();
+        }
+
+
+        //Called initially, before we post anything to the server.
+        [HttpGet]
+        public ActionResult Page2()
+        {
+
+            return View();
+        }
+
+        //Called when we submit the form.
+        [HttpPost]
+        public ActionResult Page2(FormCollection form)
+        {
+            ViewBag.message = form["food"] + " is delicious!";
+            return View();
+        }
+
+        public ActionResult Loan()
+        {
+
             return View();
         }
 
