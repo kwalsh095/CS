@@ -42,25 +42,30 @@
 
         
         <table class="table" id="info">
+            <thead>
+                <th>Intensity</th>
+                <th>Percent Max Heartrate</th>
+                <th>Target Heartrate</th>
+            </thead>
             <tr>
                 <td>Low</td>
                 <td>35% - 60%</td>
-                <td></td>
+                <td id="v1"></td>
             </tr>
             <tr>
                 <td>Medium</td>
                 <td>60% - 85%</td>
-                <td></td>
+                <td id="v2"></td>
             </tr>
             <tr>
                 <td>High</td>
                 <td>85% - 95%</td>
-                <td></td>
+                <td id="v3"></td>
             </tr>
             <tr>
                 <td>Extreme</td>
                 <td>95% - 100%</td>
-                <td></td>
+                <td id="v4"></td>
             </tr>
         </table>
     </div>
@@ -78,10 +83,17 @@
             var age = $('#age').val();
             var rhr = $('#RHR').val();
             var mult = $('#intensity').val();
-            var a = ((220 - age - rhr) * mult);
-            var ans = parseInt(a, 10) + parseInt(rhr, 10);
+            var a = 220 - age - rhr;
+            var b = a * mult;
+            var ans = parseInt(b, 10) + parseInt(rhr, 10);
             
             $('#answer').html("Your target heartrate is " + ans);
+            
+            $('#v1').html(parseInt((a * .35), 10) + parseInt(rhr, 10));
+            $('#v2').html(parseInt((a * .6), 10) + parseInt(rhr, 10));
+            $('#v3').html(parseInt((a * .85), 10) + parseInt(rhr, 10));
+            $('#v4').html(parseInt((a * .95), 10) + parseInt(rhr, 10));
+            
             $('#info').show();
         }); 
     });
