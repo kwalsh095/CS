@@ -21,7 +21,11 @@
 bld/
 [Bb]in/
 [Oo]bj/
+
+# Added by me
 cs460lecture/
+*.mdf
+*.ldf
 
 # Visual Studio 2015 cache/options directory
 .vs/
