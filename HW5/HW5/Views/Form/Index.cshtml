@@ -1,35 +1,40 @@
 ﻿@model IEnumerable<HW5.Models.User>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Requests";
 }
 
-<h2>Index</h2>
+<h2>Requests</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
-        <th>@Html.LabelFor(model => model.FirstOrDefault().FirstName)</th>
-        <th>LastName</th>
+        <th>V#</th>
+        <th>Fisrt Name</th>
+        <th>Last Name</th>
         <th>DOB</th>
-        <th>Year</th>
-        <th></th>
+        <th>Catalog Year</th>
+        <th>Date</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Major</th>
+        <th>Minor</th>
+        <th>Advisor</th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
+            <td>@Html.DisplayFor(model => item.ID)</td>
             <td>@Html.DisplayFor(model => item.FirstName)</td>
             <td>@Html.DisplayFor(model => item.LastName)</td>
             <td>@Html.DisplayFor(model => item.DOB)</td>
             <td>@Html.DisplayFor(model => item.C_Year)</td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
+            <td>@Html.DisplayFor(model => item.Date)</td>
+            <td>@Html.DisplayFor(model => item.Phone)</td>
+            <td>@Html.DisplayFor(model => item.Email)</td>
+            <td>@Html.DisplayFor(model => item.Major)</td>
+            <td>@Html.DisplayFor(model => item.Minor)</td>
+            <td>@Html.DisplayFor(model => item.Advisor)</td>
         </tr>
     }
 
