@@ -1,0 +1,16 @@
+﻿@model IEnumerable<HW6.Product>
+@{
+    ViewBag.Title = "Product List";
+}
+
+<h2>Product List</h2>
+
+<div class="container">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@Html.ActionLink(item.Name, "Details", "Product", new { id = item.ProductID}, null)</li>
+        }
+    </ul>
+</div>
+

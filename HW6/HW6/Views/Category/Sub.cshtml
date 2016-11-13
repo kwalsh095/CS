@@ -1,0 +1,16 @@
+﻿@model IEnumerable<HW6.ProductSubcategory>
+@{
+    ViewBag.Title = "Sub-Categories";
+}
+
+<h2>Browse our Sub-Categories:</h2>
+
+<div class="container">
+    <ul>
+        @foreach (var item in Model)
+        {
+            /*<li>@Html.ActionLink(Html.DisplayFor(model => item.Name), "d", "")</li> */
+            <li>@Html.ActionLink(item.Name, "List", "Product", new { id = item.ProductSubcategoryID }, null)</li>
+        }
+    </ul>
+</div>

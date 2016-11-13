@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>AdventureWorks Homepage</h2>
+<br />
+<h4>Great Links:</h4>
+
+<div class="container bg-info">
+    @Html.ActionLink("Browse Categories", "Index", "Category") 
+    <br />
+    @Html.ActionLink("Leave a Review", "Index", "Review")
+</div>
+
