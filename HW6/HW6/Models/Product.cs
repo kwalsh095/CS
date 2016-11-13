@@ -48,6 +48,7 @@ namespace HW6
         public decimal StandardCost { get; set; }
 
         [Column(TypeName = "money")]
+        [DisplayFormat(DataFormatString = "{0:C0}", ApplyFormatInEditMode = true)]
         public decimal ListPrice { get; set; }
 
         [StringLength(5)]

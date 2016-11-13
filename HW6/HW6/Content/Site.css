@@ -1,6 +1,7 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 5px;
     padding-bottom: 20px;
+    background-color:beige !important;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -16,3 +17,27 @@ textarea {
     max-width: 280px;
 }
 
+ul li {
+    list-style-type:none;
+    display:block;
+    font-size:larger;
+    
+}
+
+a {
+    padding:7px;
+    background-color:antiquewhite;
+}
+
+.spanning {
+    /*text-align:left;*/
+}
+
+.spanningsm {
+    /*text-align:right;*/
+    font-weight:bold;
+}
+
+.t-left {
+    width:400px !important;
+}

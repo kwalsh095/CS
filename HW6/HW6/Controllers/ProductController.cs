@@ -31,6 +31,14 @@ namespace HW6.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
+            if (product.Color == null)
+            {
+                product.Color = "N/A";
+            }
+            if (product.Size == null)
+            {
+                product.Size = "N/A";
+            }
             return View(product);
         }
     }

@@ -5,7 +5,30 @@
 
 <h2>@Model.Name</h2>
 
-<h4>@Model.StandardCost</h4>
+<br />
 
-<h4>@Model.Color</h4>
+<table class="table t-left">
+    <tr>
+        <td class="spanningsm">Product Number</td>
+        <td class="spanning">@Model.ProductNumber</td>
+    </tr>
+    <tr>
+        <td class="spanningsm">Price</td>
+        <td class="spanning">@Html.DisplayFor(p => Model.ListPrice)</td>
+    </tr>
+    <tr>
+        <td class="spanningsm">Color</td>
+        <td class="spanning">@Model.Color</td>
+    </tr>
+    <tr>
+        <td class="spanningsm">Size</td>
+        <td class="spanning">@Model.Size @Model.SizeUnitMeasureCode</td>
+    </tr>
+    <tr>
+        <td class="spanningsm">Weight</td>
+        <td class="spanning">@Model.Weight @Model.WeightUnitMeasureCode</td>
+    </tr>
+</table>
 
+<br />
+@Html.ActionLink("Return to Category List", "Index", "Category")
