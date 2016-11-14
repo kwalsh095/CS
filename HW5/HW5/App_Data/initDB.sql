@@ -38,21 +38,15 @@ CREATE TABLE [dbo].[Users] (
     PRIMARY KEY CLUSTERED ([ID] ASC)
 );
 
-CREATE TABLE [dbo].[TestInsert] (
-    [ID]        INT            NOT NULL,
-    [FirstName] NVARCHAR (50)  NOT NULL,
-    PRIMARY KEY CLUSTERED ([ID] ASC)
-);
-
---BULK INSERT [dbo].[Users]
---	FROM '$(dbdir)\SeedData\Users.csv'		-- ID,FirstName,LastName,DOB
---	WITH
---	(
---		FIELDTERMINATOR = ',',
---		ROWTERMINATOR	= '\n',
---		FIRSTROW = 2
---	);
---GO
+BULK INSERT [dbo].[Users]
+	FROM '$(dbdir)\SeedData\Users.csv'
+	WITH
+	(
+		FIELDTERMINATOR = ',',
+		ROWTERMINATOR	= '\n',
+		FIRSTROW = 2
+	);
+GO
 
 -- ***********  Detach ***********
 USE master;
