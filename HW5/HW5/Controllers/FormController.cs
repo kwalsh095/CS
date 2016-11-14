@@ -30,7 +30,6 @@ namespace HW5.Controllers
         {
             if (ModelState.IsValid)
             {
-                Debug.WriteLine("valid!");
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index"); 
