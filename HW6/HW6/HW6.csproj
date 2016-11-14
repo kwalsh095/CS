@@ -143,12 +143,15 @@
     <Content Include="Views\Category\Sub.cshtml" />
     <Content Include="Views\Product\List.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Review\Index.cshtml" />
+    <Content Include="Views\Review\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Models\BillOfMaterial.cs" />
     <Compile Include="Models\Culture.cs" />
     <Compile Include="Global.asax.cs">

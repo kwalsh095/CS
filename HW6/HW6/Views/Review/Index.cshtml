@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Write A Review";
+}
+
+<h2>Write A Review</h2>
+<br />
+<form name="reviewForm" method="post">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="ReviewerName" placeholder="John Doe">
+    </div>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" class="form-control" name="EmailAddress" placeholder="example@mail.com">
+    </div>
+    <div class="form-group">
+        <label for="rating">Rating</label>
+        <input type="number" class="form-control" name="Rating">
+    </div>
+    <div class="form-group">
+        <label for="PID">Product ID</label>
+        <input type="number" class="form-control" name="ProductID" value="@ViewBag.ID">
+    </div>
+    <div class="form-group">
+        <label for="comment">Review / Comment</label>
+        <textarea class="form-control" id="comment" name="Comments" rows="4"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Review</button>
+</form>
+
+

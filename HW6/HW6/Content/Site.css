@@ -25,19 +25,28 @@ ul li {
 }
 
 a {
-    padding:7px;
+    padding:5px;
     background-color:antiquewhite;
 }
 
-.spanning {
-    /*text-align:left;*/
+form .error {
+  color: #ff0000;
 }
 
 .spanningsm {
-    /*text-align:right;*/
     font-weight:bold;
 }
 
 .t-left {
     width:400px !important;
+}
+
+#comment {
+    max-width:500px;
+    width:500px;
+}
+
+hr {
+    color: red !important;
+    background-color:red !important;
 }

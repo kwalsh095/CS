@@ -1,0 +1,20 @@
+﻿@model IEnumerable<HW6.ProductReview>
+@{
+    ViewBag.Title = "Recent Reviews";
+}
+
+<h2>Recent Reviews</h2>
+
+@foreach (var item in Model)
+{
+<div>
+    <b>@item.Product.Name</b> <br />
+    Reviewer: @item.ReviewerName (<span class="text-muted">@item.EmailAddress</span>)<br />
+    Review Date: @Html.DisplayFor(model => item.ReviewDate)<br />
+    Rating: @item.Rating <br />
+    <br />
+    @item.Comments
+    <br /><hr />
+</div>
+<br />
+}
