@@ -1,4 +1,4 @@
-CREATE TABLE [dbo].[Pirate]
+CREATE TABLE [dbo].[Pirates]
 (
 	[ID] INT IDENTITY (1,1) NOT NULL,
 	[Name] NVARCHAR (50) NOT NULL,
@@ -6,7 +6,7 @@ CREATE TABLE [dbo].[Pirate]
 	CONSTRAINT [PK_dbo.Pirate] PRIMARY KEY CLUSTERED ([ID] ASC),
 );
 
-CREATE TABLE [dbo].[Ship]
+CREATE TABLE [dbo].[Ships]
 (
 	[ID] INT IDENTITY (1,1) NOT NULL,
 	[Name] NVARCHAR (50) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE [dbo].[Ship]
 	CONSTRAINT [PK_dbo.Ship] PRIMARY KEY CLUSTERED ([ID] ASC),
 );
 
-CREATE TABLE [dbo].[Crew]
+CREATE TABLE [dbo].[Crews]
 (
 	[ID] INT IDENTITY (1,1) NOT NULL,
 	[PirateID] INT Not NULL,
