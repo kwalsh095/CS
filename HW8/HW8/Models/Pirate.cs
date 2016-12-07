@@ -8,5 +8,8 @@ namespace HW8.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public DateTime Conscript { get; set; }
+
+        public virtual IEnumerable<Crew> Crews { get; set; }
+        public virtual IEnumerable<Ship> Ships { get; set; }
     }
 }

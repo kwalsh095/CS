@@ -21,6 +21,7 @@
                 @Html.ActionLink("Pirates", "Index", "Pirates", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Ships", "Index", "Ships", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Crews", "Index", "Crews", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Booty", "Index", "Ajax", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -30,10 +31,13 @@
     </div>
 
     <div class="container body-content">
+        <br />
+        <br />
         @RenderBody()
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("Scripts", false)
 </body>
 </html>

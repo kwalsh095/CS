@@ -120,15 +120,22 @@
     <Content Include="Views\Pirates\Details.cshtml" />
     <Content Include="Views\Pirates\Edit.cshtml" />
     <Content Include="Views\Pirates\Index.cshtml" />
+    <Content Include="Views\Ajax\Index.cshtml" />
+    <Content Include="Views\Crews\Index.cshtml" />
+    <Content Include="Views\Ships\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AjaxController.cs" />
+    <Compile Include="Controllers\CrewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PiratesController.cs" />
+    <Compile Include="Controllers\ShipsController.cs" />
     <Compile Include="DAL\PirateContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BootyList.cs" />
     <Compile Include="Models\Crew.cs" />
     <Compile Include="Models\Pirate.cs" />
     <Compile Include="Models\Ship.cs" />

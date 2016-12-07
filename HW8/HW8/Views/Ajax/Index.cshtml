@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Booty";
+}
+
+<h2>Booty</h2>
+<button class="btn btn-success" id="btn">Load Booty List</button>
+<br /><br />
+<div id="bootylist" class="h4"></div>    
+
+@section Scripts{
+<script type="text/javascript">
+    $(function () {
+        $('#btn').on("click", function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/Ajax/GetBooty',
+                type: 'GET',
+                datatype: 'json',
+                success: function (data) {
+                    $('#bootylist').empty();
+                    $(data).each(function (index, item) {
+                        $('#bootylist').append(item.Total + " Booty - " + item.Name + "<br><br>");
+                    });
+                },
+                error: function (data) {
+                    $('#bootylist').append("Loading Failed");
+                }
+            });
+        });
+    });
+</script>
+}
