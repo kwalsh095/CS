@@ -9,3 +9,46 @@
     Welcome to MyIMBD, your database for all your favorite Movies, Actors, and Directors!
 </p>
 
+<button id="btn1" class="btn btn-success">load</button>
+
+<div style="float:left;height:200px;margin-right:20px;" id="actorList">
+    
+</div>
+
+<table class="table" id="movieList" style="float:none">
+</table>
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready( function (e) {
+            $.ajax({
+                url: '/Home/GetActors',
+                type: 'GET',
+                datatype: 'json',
+                success: function (data) {
+                    $('#actorList').empty();
+                    $(data).each(function (index, item) {
+                        $('#actorList').append("<li><button id='btn" + item.ID + "' class='btn btn-success'>" + item.Name + "</button></li>");
+                    });
+                }
+            });
+
+            $('#btn1').on("click", function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: '/Home/GetMovies/1',
+                    type: 'GET',
+                    datatype: 'json',
+                    success: function (data) {
+                        $('#movieList').empty();
+                        $(data).each(function (index, item) {
+                            $('#movieList').append("<tr><td>" + item.Movie + "</td><td>" + item.Director + "</td></tr>");
+                        });
+                    }
+                });
+            });
+            
+
+        });
+    </script>
+}
