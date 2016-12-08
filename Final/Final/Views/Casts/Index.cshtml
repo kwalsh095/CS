@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Final.Models.Cast>
+
+@{
+    ViewBag.Title = "Casts";
+}
+
+<h2>Casts</h2>
+
+<table class="table">
+    <tr>
+        <th>Actor</th>
+        <th>Movie</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Actor
+        </td>
+        <td>
+            @item.Movie
+        </td>
+    </tr>
+}
+
+</table>

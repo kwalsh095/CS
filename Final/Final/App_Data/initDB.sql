@@ -1,0 +1,34 @@
+CREATE TABLE [dbo].[Actors]
+(
+	[ID] INT IDENTITY (1,1) NOT NULL,
+	[Name] NVARCHAR (50) NOT NULL,
+	CONSTRAINT [PK_dbo.Actor] PRIMARY KEY CLUSTERED ([ID] ASC),
+);
+
+CREATE TABLE [dbo].[Movies]
+(
+	[ID] INT IDENTITY (1,1) NOT NULL,
+	[Title] NVARCHAR (50) NOT NULL,
+	[Year] datetime NOT NULL,
+	[Director] NVARCHAR (50) NOT NULL,
+	CONSTRAINT [PK_dbo.Movie] PRIMARY KEY CLUSTERED ([ID] ASC),
+);
+
+CREATE TABLE [dbo].[Directors]
+(
+	[ID] INT IDENTITY (1,1) NOT NULL,
+	[Name] NVARCHAR (50) NOT NULL,
+	CONSTRAINT [PK_dbo.Director] PRIMARY KEY CLUSTERED ([ID] ASC),
+);
+
+CREATE TABLE [dbo].[Casts]
+(
+	[ID] INT IDENTITY (1,1) NOT NULL,
+	[MovieID] INT NOT NULL,
+	[ActorID] INT NOT NULL,
+	[Actor] NVARCHAR (50) NOT NULL,
+	[Movie] NVARCHAR (50) NOT NULL,
+	CONSTRAINT [PK_dbo.Cast] PRIMARY KEY CLUSTERED ([ID] ASC),
+	CONSTRAINT [FK_dbo.Cast_dbo.Movie_ID] FOREIGN KEY ([MovieID]) REFERENCES [dbo].[Movie] ([ID]),
+	CONSTRAINT [FK_dbo.Cast_dbo.Actor_ID] FOREIGN KEY ([ActorID]) REFERENCES [dbo].[Actor] ([ID]),
+);
